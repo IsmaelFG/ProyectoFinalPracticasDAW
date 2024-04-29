@@ -39,7 +39,14 @@ public class ListadoPedidosServlet extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		UsuarioVO usuario = (UsuarioVO) session.getAttribute("usuario");
 		
-		pedidos = ListadoPedidosService.listarPedidos(usuario.getId());
+		String orden = request.getParameter("orden");
+		
+		if (orden == null) {	
+			orden = "desc";
+		}
+		
+		pedidos = ListadoPedidosService.listarPedidos(usuario.getId(), orden);
+		System.out.println(orden);
 		
 		
 		request.setAttribute("pedidos", pedidos);
