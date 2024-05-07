@@ -6,18 +6,13 @@ import java.sql.SQLException;
 
 public class Conexion {
     
-	static String bd = "tienda_alvaro_cordero";
+	static String bd = "tienda_ismael_ferreras";
 	static String login = "root";
 	static String password = "";
 	static String host = "127.0.0.1"; 
-        
-//  static String bd = "tienda_curso_serbatic";
-//	static String login = "adminsql";
-//	static String password = "paso";
-//	static String host = "192.168.1.233"; //localhost
 	
 	static String url = "jdbc:mysql://";
-	static Connection conexion; //atributo para  guardar el objeto Connection
+	static Connection conexion;
         
         
 	
@@ -29,7 +24,6 @@ public class Conexion {
 	    return conexion;
     }
     
-    // devuelve true si se ha creado correctamente
     public static boolean crearConexion() {
 	    try {
 	        //cargo el driver

@@ -37,7 +37,7 @@
 				<h2 class="display-3 text-black">Gracias!</h2>
 				<p class="lead mb-5">Tu pedido esta completado</p>
 				<p>
-					<a href="/TIENDA_ALVARO_CORDERO/" class="btn btn-sm btn-outline-black">Volver a la tienda</a>
+					<a href="/TIENDA_ISMAEL_FERRERAS/" class="btn btn-sm btn-outline-black">Volver a la tienda</a>
 				</p>
 			</div>
 		</div>

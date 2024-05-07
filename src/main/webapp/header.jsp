@@ -8,76 +8,147 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
+<title>Eternal Elegance</title>
+<meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="Alvaro Cordero Miñambres" content="Untree.co">
-<link rel="shortcut icon" href="favicon.png">
-
-<meta name="description" content="Alvaro Cordero Miñambres Serbatic Web" />
-<meta name="keywords" content="bootstrap, bootstrap4" />
-
-<!-- Bootstrap CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
+<meta name="description" content="Demo powered by Templatetrip">
+<meta name="author" content="Ismael Ferreras García">
+<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
 <link
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+	href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900"
 	rel="stylesheet">
-<link href="css/tiny-slider.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
-<title>Alvaro Cordero Miñambres - Serbatic Web</title>
+<link
+	href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,900"
+	rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+<!-- Bootstrap core CSS -->
+<link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+<!-- Bootstrap core CSS -->
+<link href="css/styles.css" rel="stylesheet">
+<link href="css/animate.css" rel="stylesheet">
+<link href="css/owl-carousel.css" rel="stylesheet">
+<link href="css/lightbox.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
 </head>
 
-<body>
+<body class="index layout1">
 
-	<!-- Start Header/Navigation -->
-	<nav
-		class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark"
-		arial-label="Furni navigation bar">
+	<header class="header-area header-sticky text-center header-default">
+		<div class="header-main-sticky">
+			<div class="header-main-head">
+				<div class="header-main">
+					<div class="container">
+						<div
+							class="header-left float-left d-flex d-lg-flex d-md-block d-xs-block">
+							<div class="language-wrapper toggle">
+								<button type="button"
+									class="btn text-capitalize dropdown-toggle">
+									<img src="img/banner/es.png" alt="en" height="12" width="18" /><span>Español</span>
+								</button>
+								<div id="language-dropdown" class="language">
+									<ul>
+										<li><a href="/TIENDA_ISMAEL_FERRERAS/"><img
+												src="img/banner/es.png" alt="es" width="18" height="12" /><span>Español</span></a></li>
+										<li><a href="/TIENDA_ISMAEL_FERRERAS/"><img
+												src="img/banner/en.png" alt="en" width="18" height="12" /><span>English</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div
+							class="header-middle float-lg-left float-md-left float-sm-left float-xs-none">
+							<div class="logo">
+								<a href="/TIENDA_ISMAEL_FERRERAS/"><img
+									src="img/logos/logo.png"></a>
+							</div>
+						</div>
+						<div
+							class="header-right d-flex d-xs-flex d-sm-flex justify-content-end float-right">
+							<div class="user-info">
+								<button type="button" class="btn">
+									<i class="material-icons">perm_identity</i>
+								</button>
+								<div id="user-dropdown" class="user-menu">
+									<ul>
+										<%
+										if (session.getAttribute("usuario") != null) {
+											UsuarioVO u = (UsuarioVO) session.getAttribute("usuario");
+										%>
+										<li><a href="PerfilServlet" class="text-capitalize">Cuenta</a></li>
+										<li><a href="LogoutServlet" class="text-capitalize">Cerrar
+												Sesión</a></li>
+										<%
+										} else {
+										%>
+										<li><a href="RegistroServlet" class="modal-view button">Registro</a></li>
+										<li><a href="LoginServlet" class="modal-view button">Iniciar
+												Sesión</a></li>
+										<%
+										}
+										%>
 
-		<div class="container">
-			<a class="navbar-brand" href="/TIENDA_ALVARO_CORDERO/">Amuebla</a>
-
-			<button class="navbar-toggler" type="button"
-				data-bs-toggle="collapse" data-bs-target="#navbarsFurni"
-				aria-controls="navbarsFurni" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-
-			<div class="collapse navbar-collapse" id="navbarsFurni">
-				<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-					<li class="nav-item"><a class="nav-link"
-						href="/TIENDA_ALVARO_CORDERO/">Inicio</a></li>
-					<li><a class="nav-link" href="TiendaServlet">Tienda</a></li>
-					<li><a class="nav-link" href="ContactServlet">Contactar</a></li>
-				</ul>
-
-				<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-					<li><a class="nav-link" href="PerfilServlet"><img
-							src="images/user.svg"> <%
- if (session.getAttribute("usuario") != null) {
- 	UsuarioVO u = (UsuarioVO) session.getAttribute("usuario");
- 	out.println(u.getEmail());
- }
- %> </a></li>
-					<%
-					if (session.getAttribute("usuario") != null) {
-						UsuarioVO u = (UsuarioVO) session.getAttribute("usuario");
-					
-					%>
-					<li style="padding: 0; margin-top: 10px; margin-right: 15px"><a href="LogoutServlet"><i
-							class="fas fa-sign-out-alt fa-inverse fa-lg"></i></a></li>
-
-					<%} %>
-					<li><a class="nav-link" href="CarritoServlet"> <img
-							src="images/cart.svg"> <%
+									</ul>
+								</div>
+							</div>
+							<div class="cart-wrapper">
+								<button type="button" class="btn"
+									onclick="window.location.href='CarritoServlet'">
+									<i class="material-icons">shopping_cart</i> <span
+										class="ttcount"> <%
  Map<ProductoVO, Integer> carrito = (Map<ProductoVO, Integer>) request.getSession().getAttribute("carrito");
 
  out.println(carrito != null ? carrito.size() : "");
  %>
-					</a></li>
-				</ul>
+									</span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="menu">
+					<div class="container">
+						<!-- Navbar -->
+						<nav
+							class="navbar navbar-expand-lg navbar-light d-sm-none d-xs-none d-lg-block navbar-full">
+
+							<!-- Navbar brand -->
+							<a class="navbar-brand text-uppercase d-none" href="#">Navbar</a>
+
+							<!-- Collapse button -->
+							<button class="navbar-toggler" type="button"
+								data-toggle="collapse" data-target="#navbarSupportedContent2"
+								aria-controls="navbarSupportedContent2" aria-expanded="false"
+								aria-label="Toggle navigation">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+
+							<!-- Collapsible content -->
+							<div class="collapse navbar-collapse">
+
+								<!-- Links -->
+								<ul class="navbar-nav m-auto justify-content-center">
+									<li class="nav-item dropdown active"><a
+										class="nav-link text-uppercase"
+										href="/TIENDA_ISMAEL_FERRERAS/">Inicio<span
+											class="sr-only">(current)</span>
+									</a></li>
+									<li class="nav-item dropdown mega-dropdown"><a
+										class="nav-link text-uppercase" href="TiendaServlet">Catalogo</a>
+									</li>
+									<li class="nav-item dropdown"><a
+										class="nav-link text-uppercase" href="ContactServlet">Contactar<span
+											class="sr-only">(current)</span>
+									</a></li>
+								</ul>
+							</div>
+						</nav>
+					</div>
+				</div>
 			</div>
 		</div>
-
-	</nav>
+	</header>

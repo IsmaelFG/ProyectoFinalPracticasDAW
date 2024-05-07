@@ -1,435 +1,451 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="header.jsp"%>
-<%
-session = request.getSession();
-%>
-<!-- Start Hero Section -->
-<div class="hero">
-	<div class="container">
-		<div class="row justify-content-between">
-			<div class="col-lg-5">
-				<div class="intro-excerpt">
-					<h1>
-						Interiores Modernos <span class="d-block"></span>
-					</h1>
-					<p class="mb-4">Explora nuestra colección de muebles modernos
-						que fusionan elegancia contemporánea con funcionalidad innovadora.</p>
-					<p>
-						<a href="TiendaServlet" class="btn btn-secondary me-2">Comprar Ahora</a>
-					</p>
-				</div>
-			</div>
-			<div class="col-lg-7">
-				<div class="hero-img-wrap">
-					<img src="images/couch.png" class="img-fluid">
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- End Hero Section -->
-
-<!-- Start Product Section -->
-<div class="product-section">
-	<div class="container">
-		<div class="row">
-			<%
-			List<ProductoVO> catalogo = (List<ProductoVO>) request.getAttribute("catalogo");
-
-			for (ProductoVO producto : catalogo) {
-			%>
-			<!-- Start Column 2 -->
-			<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-				<div class="product-item">
-					<a style="text-decoration: none"
-						href="DetalleProductoServlet?id=<%=producto.getId()%>"> <img
-						src="images/<%=producto.getImagen()%>"
-						class="img-fluid product-thumbnail">
-						<h3 class="product-title"><%=producto.getNombre()%></h3> <strong
-						class="product-price"><%=producto.getPrecio() + "€"%></strong>
-
-					</a> 
-				
-					<a
-						style="display: flex; justify-content: center; padding-top: 15px; text-decoration: none; "
-						href="AñadirProductoServlet?id=<%=producto.getId()%>&product-quantity=1"
-						class="img-fluid"><i class="fa-solid fa-circle-plus fa-2x"></i></a>
-	
-
-				</div>
-			</div>
-			<%
-			}
-			%>
-
-		</div>
-	</div>
-</div>
-<!-- End Product Section -->
-
-<!-- Start Why Choose Us Section -->
-<div class="why-choose-section">
-	<div class="container">
-		<div class="row justify-content-between">
-			<div class="col-lg-6">
-				<h2 class="section-title">Why Choose Us</h2>
-				<p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac
-					aliquet velit. Aliquam vulputate velit imperdiet dolor tempor
-					tristique.</p>
-
-				<div class="row my-5">
-					<div class="col-6 col-md-6">
-						<div class="feature">
-							<div class="icon">
-								<img src="images/truck.svg" alt="Image" class="imf-fluid">
+	<main>
+		<div class="slider-wrapper my-40 my-sm-25 float-left w-100">
+			<div class="container">
+				<div class="slider slider-for owl-carousel">
+					<div>
+						<a href="#"> <img src="img/slider/sample-01.jpg" alt=""
+							height="800" width="1600" />
+						</a>
+						<div class="slider-content-wrap center effect_top">
+							<div class="slider-title mb-20 text-capitalize float-left w-100">our
+								specials</div>
+							<div
+								class="slider-subtitle mb-50 text-capitalize float-left w-100">fashion
+								trend</div>
+							<div class="slider-button text-uppercase float-left w-100">
+								<a href="TiendaServlet">Shop Now</a>
 							</div>
-							<h3>Fast &amp; Free Shipping</h3>
-							<p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac
-								aliquet velit. Aliquam vulputate.</p>
 						</div>
 					</div>
-
-					<div class="col-6 col-md-6">
-						<div class="feature">
-							<div class="icon">
-								<img src="images/bag.svg" alt="Image" class="imf-fluid">
+					<div>
+						<a href="#"> <img src="img/slider/sample-02.jpg" alt=""
+							height="800" width="1600" />
+						</a>
+						<div class="slider-content-wrap center effect_bottom">
+							<div class="slider-title mb-20 text-capitalize float-left w-100">about
+								us</div>
+							<div
+								class="slider-subtitle mb-50 text-capitalize float-left w-100">fashion
+								style</div>
+							<div class="slider-button text-uppercase float-left w-100">
+								<a href="TiendaServlet">Shop Now</a>
 							</div>
-							<h3>Easy to Shop</h3>
-							<p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac
-								aliquet velit. Aliquam vulputate.</p>
 						</div>
 					</div>
+				</div>
+			</div>
+		</div>
 
-					<div class="col-6 col-md-6">
-						<div class="feature">
-							<div class="icon">
-								<img src="images/support.svg" alt="Image" class="imf-fluid">
+		<div class="main-content">
+			<div id="ttcmsbanner" class="ttcmsbanner my-40 my-sm-25">
+				<div class="ttbannerblock container text-center">
+					<div class="row">
+						<div
+							class="ttbanner1 ttbanner col-sm-6 col-xs-6 left-to-right hb-animate-element">
+							<div class="ttbanner-img">
+								<a href="#"><img src="img/banner/cms-01.jpg" alt="cms-01"
+									height="600" width="630"></a>
 							</div>
-							<h3>24/7 Support</h3>
-							<p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac
-								aliquet velit. Aliquam vulputate.</p>
-						</div>
-					</div>
-
-					<div class="col-6 col-md-6">
-						<div class="feature">
-							<div class="icon">
-								<img src="images/return.svg" alt="Image" class="imf-fluid">
-							</div>
-							<h3>Hassle Free Returns</h3>
-							<p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac
-								aliquet velit. Aliquam vulputate.</p>
-						</div>
-					</div>
-
-				</div>
-			</div>
-
-			<div class="col-lg-5">
-				<div class="img-wrap">
-					<img src="images/why-choose-us-img.jpg" alt="Image"
-						class="img-fluid">
-				</div>
-			</div>
-
-		</div>
-	</div>
-</div>
-<!-- End Why Choose Us Section -->
-
-<!-- Start We Help Section -->
-<div class="we-help-section">
-	<div class="container">
-		<div class="row justify-content-between">
-			<div class="col-lg-7 mb-5 mb-lg-0">
-				<div class="imgs-grid">
-					<div class="grid grid-1">
-						<img src="images/img-grid-1.jpg" alt="Untree.co">
-					</div>
-					<div class="grid grid-2">
-						<img src="images/img-grid-2.jpg" alt="Untree.co">
-					</div>
-					<div class="grid grid-3">
-						<img src="images/img-grid-3.jpg" alt="Untree.co">
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-5 ps-lg-5">
-				<h2 class="section-title mb-4">We Help You Make Modern Interior
-					Design</h2>
-				<p>Donec facilisis quam ut purus rutrum lobortis. Donec vitae
-					odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
-					vulputate velit imperdiet dolor tempor tristique. Pellentesque
-					habitant morbi tristique senectus et netus et malesuada</p>
-
-				<ul class="list-unstyled custom-list my-4">
-					<li>Donec vitae odio quis nisl dapibus malesuada</li>
-					<li>Donec vitae odio quis nisl dapibus malesuada</li>
-					<li>Donec vitae odio quis nisl dapibus malesuada</li>
-					<li>Donec vitae odio quis nisl dapibus malesuada</li>
-				</ul>
-				<p>
-					<a herf="#" class="btn">Explore</a>
-				</p>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- End We Help Section -->
-
-<!-- Start Popular Product -->
-<div class="popular-product">
-	<div class="container">
-		<div class="row">
-
-			<div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
-				<div class="product-item-sm d-flex">
-					<div class="thumbnail">
-						<img src="images/product-1.png" alt="Image" class="img-fluid">
-					</div>
-					<div class="pt-3">
-						<h3>Nordic Chair</h3>
-						<p>Donec facilisis quam ut purus rutrum lobortis. Donec vitae
-							odio</p>
-						<p>
-							<a href="#">Read More</a>
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
-				<div class="product-item-sm d-flex">
-					<div class="thumbnail">
-						<img src="images/product-2.png" alt="Image" class="img-fluid">
-					</div>
-					<div class="pt-3">
-						<h3>Kruzo Aero Chair</h3>
-						<p>Donec facilisis quam ut purus rutrum lobortis. Donec vitae
-							odio</p>
-						<p>
-							<a href="#">Read More</a>
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
-				<div class="product-item-sm d-flex">
-					<div class="thumbnail">
-						<img src="images/product-3.png" alt="Image" class="img-fluid">
-					</div>
-					<div class="pt-3">
-						<h3>Ergonomic Chair</h3>
-						<p>Donec facilisis quam ut purus rutrum lobortis. Donec vitae
-							odio</p>
-						<p>
-							<a href="#">Read More</a>
-						</p>
-					</div>
-				</div>
-			</div>
-
-		</div>
-	</div>
-</div>
-<!-- End Popular Product -->
-
-<!-- Start Testimonial Slider -->
-<div class="testimonial-section">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-7 mx-auto text-center">
-				<h2 class="section-title">Testimonials</h2>
-			</div>
-		</div>
-
-		<div class="row justify-content-center">
-			<div class="col-lg-12">
-				<div class="testimonial-slider-wrap text-center">
-
-					<div id="testimonial-nav">
-						<span class="prev" data-controls="prev"><span
-							class="fa fa-chevron-left"></span></span> <span class="next"
-							data-controls="next"><span class="fa fa-chevron-right"></span></span>
-					</div>
-
-					<div class="testimonial-slider">
-
-						<div class="item">
-							<div class="row justify-content-center">
-								<div class="col-lg-8 mx-auto">
-
-									<div class="testimonial-block text-center">
-										<blockquote class="mb-5">
-											<p>&ldquo;Donec facilisis quam ut purus rutrum lobortis.
-												Donec vitae odio quis nisl dapibus malesuada. Nullam ac
-												aliquet velit. Aliquam vulputate velit imperdiet dolor
-												tempor tristique. Pellentesque habitant morbi tristique
-												senectus et netus et malesuada fames ac turpis egestas.
-												Integer convallis volutpat dui quis scelerisque.&rdquo;</p>
-										</blockquote>
-
-										<div class="author-info">
-											<div class="author-pic">
-												<img src="images/person-1.png" alt="Maria Jones"
-													class="img-fluid">
-											</div>
-											<h3 class="font-weight-bold">Maria Jones</h3>
-											<span class="position d-block mb-3">CEO, Co-Founder,
-												XYZ Inc.</span>
-										</div>
-									</div>
-
+							<div class="ttbanner-inner d-inline-block align-top float-none">
+								<div class="ttbanner-desc float-left w-100">
+									<h2 class="ttbanner-heading text-uppercase float-left w-100">Womens</h2>
+									<span class="title text-uppercase float-left w-100 pb-3">collection</span>
+									<span class="subtitle float-left w-100 py-20">Et harum
+										quidem rerum facilis est et expedita m libero tempore, cum
+										solut</span> <span class="shop-now float-left w-100"><a
+										href="TiendaServlet"
+										class="d-inline-block align-top float-none btn-primary">Shop
+											Now</a></span>
 								</div>
 							</div>
 						</div>
-						<!-- END item -->
-
-						<div class="item">
-							<div class="row justify-content-center">
-								<div class="col-lg-8 mx-auto">
-
-									<div class="testimonial-block text-center">
-										<blockquote class="mb-5">
-											<p>&ldquo;Donec facilisis quam ut purus rutrum lobortis.
-												Donec vitae odio quis nisl dapibus malesuada. Nullam ac
-												aliquet velit. Aliquam vulputate velit imperdiet dolor
-												tempor tristique. Pellentesque habitant morbi tristique
-												senectus et netus et malesuada fames ac turpis egestas.
-												Integer convallis volutpat dui quis scelerisque.&rdquo;</p>
-										</blockquote>
-
-										<div class="author-info">
-											<div class="author-pic">
-												<img src="images/person-1.png" alt="Maria Jones"
-													class="img-fluid">
-											</div>
-											<h3 class="font-weight-bold">Maria Jones</h3>
-											<span class="position d-block mb-3">CEO, Co-Founder,
-												XYZ Inc.</span>
-										</div>
-									</div>
-
+						<div
+							class="ttbanner2 ttbanner col-sm-6 col-xs-6 right-to-left hb-animate-element">
+							<div class="ttbanner-img">
+								<a href="#"><img src="img/banner/cms-02.jpg" alt="cms-02"
+									height="600" width="630"></a>
+							</div>
+							<div class="ttbanner-inner d-inline-block align-top float-none">
+								<div class="ttbanner-desc">
+									<h2 class="ttbanner-heading text-uppercase">Men's</h2>
+									<span class="title text-uppercase float-left w-100 pb-3">collection</span>
+									<span class="subtitle float-left w-100 py-20">Et harum
+										quidem rerum facilis est et expedita m libero tempore, cum
+										solut</span> <span class="shop-now float-left w-100"><a
+										href="TiendaServlet"
+										class="d-inline-block align-top float-none btn-primary">Shop
+											Now</a></span>
 								</div>
 							</div>
 						</div>
-						<!-- END item -->
+					</div>
+				</div>
+			</div>
+			<div id="main">
+				<div id="hometab"
+					class="home-tab my-40 my-sm-25 bottom-to-top hb-animate-element">
+					<div class="container">
+						<div class="row">
+							<div class="tt-title d-inline-block float-none w-100 text-center">Trending
+								Products</div>
+							<div class="tab-content float-left w-100">
+								<div class="tab-pane active float-left w-100"
+									id="ttfeatured-main" role="tabpanel"
+									aria-labelledby="featured-tab">
+									<section id="ttfeatured" class="ttfeatured-products">
+										<div class="ttfeatured-content products grid owl-carousel"
+											id="owl1">
+											<%
+											List<ProductoVO> catalogo = (List<ProductoVO>) request.getAttribute("catalogo");
 
-						<div class="item">
-							<div class="row justify-content-center">
-								<div class="col-lg-8 mx-auto">
-
-									<div class="testimonial-block text-center">
-										<blockquote class="mb-5">
-											<p>&ldquo;Donec facilisis quam ut purus rutrum lobortis.
-												Donec vitae odio quis nisl dapibus malesuada. Nullam ac
-												aliquet velit. Aliquam vulputate velit imperdiet dolor
-												tempor tristique. Pellentesque habitant morbi tristique
-												senectus et netus et malesuada fames ac turpis egestas.
-												Integer convallis volutpat dui quis scelerisque.&rdquo;</p>
-										</blockquote>
-
-										<div class="author-info">
-											<div class="author-pic">
-												<img src="images/person-1.png" alt="Maria Jones"
-													class="img-fluid">
+											for (ProductoVO producto : catalogo) {
+											%>
+											<div class="product-layouts">
+												<div class="product-thumb">
+													<div class="image zoom">
+														<a href="DetalleProductoServlet?id=<%=producto.getId()%>">
+															<img src="img/products/<%=producto.getId()%>.png" height="501"
+															width="385" /> <img
+															src="img/products/<%=producto.getId()%>.png"
+															class="second_image img-responsive" height="501"
+															width="385" />
+														</a>
+													</div>
+													<div class="thumb-description">
+														<div class="caption">
+															<h4 class="product-title text-capitalize">
+																<a
+																	href="DetalleProductoServlet?id=<%=producto.getId()%>"><%=producto.getNombre()%></a>
+															</h4>
+														</div>
+														<!-- 														<div class="rating">
+															<div class="product-ratings d-inline-block align-middle">
+																<span class="fa fa-stack"><i
+																	class="material-icons">star</i></span> <span
+																	class="fa fa-stack"><i class="material-icons">star</i></span>
+																<span class="fa fa-stack"><i
+																	class="material-icons">star</i></span> <span
+																	class="fa fa-stack"><i
+																	class="material-icons off">star</i></span> <span
+																	class="fa fa-stack"><i
+																	class="material-icons off">star</i></span>
+															</div>
+														</div> -->
+														<div class="price">
+															<div class="regular-price"><%=producto.getPrecio() + "€"%></div>
+														</div>
+														<div class="button-wrapper">
+															<div class="button-group text-center">
+																<button type="button" class="btn btn-primary btn-cart"
+																	onclick="window.location.href='AñadirProductoServlet?id=<%=producto.getId()%>&product-quantity=1'">
+																	<i class="material-icons">shopping_cart</i><span>Add
+																		to cart</span>
+																</button>
+																<!-- 				<a href="wishlist.html"
+																	class="btn btn-primary btn-wishlist"><i
+																	class="material-icons">favorite</i><span>wishlist</span></a>
+																<button type="button"
+																	class="btn btn-primary btn-compare">
+																	<i class="material-icons">equalizer</i><span>Compare</span>
+																</button>
+																<button type="button"
+																	class="btn btn-primary btn-quickview"
+																	data-toggle="modal" data-target="#product_view">
+																	<i class="material-icons">visibility</i><span>Quick
+																		View</span>
+																</button> -->
+															</div>
+														</div>
+													</div>
+												</div>
 											</div>
-											<h3 class="font-weight-bold">Maria Jones</h3>
-											<span class="position d-block mb-3">CEO, Co-Founder,
-												XYZ Inc.</span>
+											<%
+											}
+											%>
 										</div>
-									</div>
-
+									</section>
 								</div>
 							</div>
 						</div>
-						<!-- END item -->
-
 					</div>
-
 				</div>
-			</div>
-		</div>
+				<div id="ttcmstestimonial"
+					class="my-40 my-sm-25 bottom-to-top hb-animate-element">
+					<div class="tttestimonial-content container">
+						<div class="tttestimonial-inner">
+							<div class="tttestimonial owl-carousel">
+								<div>
+									<div class="testimonial-block">
+										<div class="testimonial-image">
+											<img alt="" src="img/banner/user1.jpg" height="120"
+												width="120" />
+										</div>
+										<div class="testimonial-content">
+											<div class="testimonial-desc">
+												<p>Duis faucibus enim vitae nunc molestie, nec facilisis
+													arcu pulvinar. Nullam mattis arcu convallis, bibendum dui
+													ac, laoreet est.Vivamus interdum egastas rutrum. Quisque
+													laoreet ante sed placerat imperdiet.</p>
+											</div>
+											<div class="testimonial-user-title">
+												<h4>John Duff</h4>
+												<div class="user-designation">CEO</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div>
+									<div class="testimonial-block">
+										<div class="testimonial-image">
+											<img alt="" src="img/banner/user2.jpg" height="120"
+												width="120" />
+										</div>
+										<div class="testimonial-content">
+											<div class="testimonial-desc">
+												<p>Duis faucibus enim vitae nunc molestie, nec facilisis
+													arcu pulvinar. Nullam mattis arcu convallis, bibendum dui
+													ac, laoreet est.Vivamus interdum egastas rutrum. Quisque
+													laoreet ante sed placerat imperdiet.</p>
+											</div>
+											<div class="testimonial-user-title">
+												<h4>Nazli dof</h4>
+												<div class="user-designation">Marketing Manager</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div>
+									<div class="testimonial-block">
+										<div class="testimonial-image">
+											<img alt="" src="img/banner/user3.jpg" height="120"
+												width="120" />
+										</div>
+										<div class="testimonial-content">
+											<div class="testimonial-desc">
+												<p>Duis faucibus enim vitae nunc molestie, nec facilisis
+													arcu pulvinar. Nullam mattis arcu convallis, bibendum dui
+													ac, laoreet est.Vivamus interdum egastas rutrum. Quisque
+													laoreet ante sed placerat imperdiet.</p>
+											</div>
+											<div class="testimonial-user-title">
+												<h4>Aly Vefa</h4>
+												<div class="user-designation">Sales Exuctive</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="ttcmssubbanner"
+					class="ttcmssubbanner my-40 my-sm-25 bottom-to-top hb-animate-element">
+					<div class="ttbannerblock container">
+						<div class="row">
+							<div class="ttbanner1 ttbanner col-sm-6 col-xs-6">
+								<div class="ttbanner-img">
+									<a href="#"><img src="img/banner/cms-03.jpg" alt="cms-03"
+										height="600" width="400"></a>
+								</div>
+								<div class="ttbanner-inner">
+									<div class="ttbanner-desc text-center">
+										<span class="title text-uppercase">summer shop</span> <span
+											class="subtitle text-uppercase py-20">up to 70% off</span> <span
+											class="shop-now text-capitalize"><a href="#"
+											class="btn-primary">shop now</a></span>
+									</div>
+								</div>
+							</div>
+							<div class="ttbanner2 ttbanner col-sm-6">
+								<div class="ttbanner-img">
+									<a href="#"><img src="img/banner/cms-04.jpg" alt="cms-04"
+										height="600" width="400"></a>
+								</div>
+								<div class="ttbanner-inner">
+									<div class="ttbanner-desc text-center">
+										<span class="title text-uppercase">winter shop</span> <span
+											class="subtitle text-uppercase py-20">up to 70% off</span> <span
+											class="shop-now text-capitalize"><a href="#"
+											class="btn-primary">shop now</a></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="ttsmartblog"
+					class="my-40 my-sm-25 bottom-to-top hb-animate-element">
+					<div
+						class="tt-title d-inline-block float-none w-100 text-center text-capitalize">latest
+						news</div>
+					<div class="container">
+						<div class="row">
+							<div class="smartblog-content owl-carousel">
+								<div class="ttblog">
+									<div class="item">
+										<div class="ttblog_image_holder">
+											<a href="#"> <img src="img/banner/blog-01.jpg"
+												alt="blog-01" width="415" height="269">
+											</a> <span class="blogicons"> <a
+												title="Click to view Full Image"
+												href="img/banner/blog-01.jpg" data-lightbox="example-set"
+												class="icon zoom"><i class="material-icons">search</i></a>
+											</span>
+										</div>
+										<div class="blog-content-wrap float-left w-100">
+											<div class="blog_inner">
+												<h4 class="blog-title">
+													<span>Share the Love</span>
+												</h4>
+												<div class="blog-desc">Lorem ipsum dolor sit amet,
+													consectetur adipiscing elit.</div>
+												<div class="read-more text-capitalize">
+													<a title="Click to view Read More" class="readmore">read
+														more</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="ttblog">
+									<div class="item">
+										<div class="ttblog_image_holder">
+											<a href="#"> <img src="img/banner/blog-02.jpg"
+												alt="blog-02" width="415" height="269">
+											</a> <span class="blogicons"> <a
+												title="Click to view Full Image"
+												href="img/banner/blog-02.jpg" data-lightbox="example-set"
+												class="icon zoom"><i class="material-icons">search</i></a>
+											</span>
+										</div>
+										<div class="blog-content-wrap float-left w-100">
+											<div class="blog_inner">
+												<h4 class="blog-title">
+													<span>Upon of seasons earth</span>
+												</h4>
+												<div class="blog-desc">Lorem ipsum dolor sit amet,
+													consectetur adipiscing elit.</div>
+												<div class="read-more text-capitalize">
+													<a title="Click to view Read More" class="readmore">read
+														more</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="ttblog">
+									<div class="item">
+										<div class="ttblog_image_holder">
+											<a href="#"> <img src="img/banner/blog-03.jpg"
+												alt="blog-03" width="415" height="269">
+											</a> <span class="blogicons"> <a
+												title="Click to view Full Image"
+												href="img/banner/blog-03.jpg" data-lightbox="example-set"
+												class="icon zoom"><i class="material-icons">search</i></a>
+											</span>
+										</div>
+										<div class="blog-content-wrap float-left w-100">
+											<div class="blog_inner">
+												<h4 class="blog-title">
+													<span>From Now we are certified web</span>
+												</h4>
+												<div class="blog-desc">Lorem ipsum dolor sit amet,
+													consectetur adipiscing elit.</div>
+												<div class="read-more text-capitalize">
+													<a title="Click to view Read More" class="readmore">read
+														more</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="ttblog">
+									<div class="item">
+										<div class="ttblog_image_holder">
+											<a href="#"> <img src="img/banner/blog-04.jpg"
+												alt="blog-04" width="415" height="269">
+											</a> <span class="blogicons"> <a
+												title="Click to view Full Image"
+												href="img/banner/blog-04.jpg" data-lightbox="example-set"
+												class="icon zoom"><i class="material-icons">search</i></a>
+											</span>
+										</div>
+										<div class="blog-content-wrap float-left w-100">
+											<div class="blog_inner">
+												<h4 class="blog-title">
+													<span>Viderer voluptatum te eum</span>
+												</h4>
+												<div class="blog-desc">Lorem ipsum dolor sit amet,
+													consectetur adipiscing elit.</div>
+												<div class="read-more text-capitalize">
+													<a title="Click to view Read More" class="readmore">read
+														more</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="ttblog">
+									<div class="item">
+										<div class="ttblog_image_holder">
+											<a href="#"> <img src="img/banner/blog-05.jpg"
+												alt="blog-05" width="415" height="269">
+											</a> <span class="blogicons"> <a
+												title="Click to view Full Image"
+												href="img/banner/blog-05.jpg" data-lightbox="example-set"
+												class="icon zoom"><i class="material-icons">search</i></a>
+											</span>
+										</div>
+										<div class="blog-content-wrap float-left w-100">
+											<div class="blog_inner">
+												<h4 class="blog-title">
+													<span>Share the Love</span>
+												</h4>
+												<div class="blog-desc">Lorem ipsum dolor sit amet,
+													consectetur adipiscing elit.</div>
+												<div class="read-more text-capitalize">
+													<a title="Click to view Read More" class="readmore">read
+														more</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+	</main>
+	<!-- Footer -->
+	<%@ include file="footer.jsp"%>
+	<div class="alert text-center cookiealert" role="alert">
+		<b>Do you like cookies?</b> We use cookies to ensure you get the best
+		experience on our website. <a
+			href="https://demo.templatetrip.com/Html/HTML001_victoria/"
+			rel="noreferrer">learn more</a>
+
+		<button type="button" class="btn btn-primary btn-sm acceptcookies"
+			aria-label="Close">I agree</button>
 	</div>
-</div>
-<!-- End Testimonial Slider -->
 
-<!-- Start Blog Section -->
-<div class="blog-section">
-	<div class="container">
-		<div class="row mb-5">
-			<div class="col-md-6">
-				<h2 class="section-title">Recent Blog</h2>
-			</div>
-			<div class="col-md-6 text-start text-md-end">
-				<a href="#" class="more">View All Posts</a>
-			</div>
-		</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/custom.js"></script>
+	<script src="js/parallax.js"></script>
+	<script src="js/lightbox-2.6.min.js"></script>
+	<script src="js/ResizeSensor.min.js"></script>
+	<script src="js/theia-sticky-sidebar.min.js"></script>
+	<script src="js/inview.js"></script>
+	<script src="js/cookiealert.js"></script>
+	<script src="js/jquery.countdown.min.js"></script>
+	<script src="js/masonry.pkgd.min.js"></script>
+	<script src="js/imagesloaded.pkgd.min.js"></script>
+	<script src="js/jquery.zoom.min.js"></script>
+	<script src="js/jquery.lazy.min.js"></script>
 
-		<div class="row">
-
-			<div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
-				<div class="post-entry">
-					<a href="#" class="post-thumbnail"><img src="images/post-1.jpg"
-						alt="Image" class="img-fluid"></a>
-					<div class="post-content-entry">
-						<h3>
-							<a href="#">First Time Home Owner Ideas</a>
-						</h3>
-						<div class="meta">
-							<span>by <a href="#">Kristin Watson</a></span> <span>on <a
-								href="#">Dec 19, 2021</a></span>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
-				<div class="post-entry">
-					<a href="#" class="post-thumbnail"><img src="images/post-2.jpg"
-						alt="Image" class="img-fluid"></a>
-					<div class="post-content-entry">
-						<h3>
-							<a href="#">How To Keep Your Furniture Clean</a>
-						</h3>
-						<div class="meta">
-							<span>by <a href="#">Robert Fox</a></span> <span>on <a
-								href="#">Dec 15, 2021</a></span>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
-				<div class="post-entry">
-					<a href="#" class="post-thumbnail"><img src="images/post-3.jpg"
-						alt="Image" class="img-fluid"></a>
-					<div class="post-content-entry">
-						<h3>
-							<a href="#">Small Space Furniture Apartment Ideas</a>
-						</h3>
-						<div class="meta">
-							<span>by <a href="#">Kristin Watson</a></span> <span>on <a
-								href="#">Dec 12, 2021</a></span>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</div>
-	</div>
-</div>
-<!-- End Blog Section -->
-
-<!-- Start Footer Section -->
-<%@ include file="footer.jsp"%>
-<!-- End Footer Section -->
-
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/tiny-slider.js"></script>
-<script src="js/custom.js"></script>
 </body>
-
 </html>

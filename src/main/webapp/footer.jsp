@@ -1,92 +1,118 @@
-<footer class="footer-section" style="padding: 140px">
-	<div class="container relative">
-
-		<div class="sofa-img">
-			<img src="images/sofa.png" alt="Image" class="img-fluid" width="250px"; style="top: 10px;">
-		</div>
-
-		<div class="row g-5 mb-5">
-			<div class="col-lg-4">
-				<div class="mb-4 footer-logo-wrap">
-					<a href="#" class="footer-logo">Serbatic<span>.</span></a>
+	<!-- Footer -->
+	<div class="block-newsletter">
+		<div class="parallax" data-source-url="img/banner/parallax.jpg"
+			style="background-image: url(img/banner/parallax.jpg); background-position: 50% 65.8718%;">
+			<div class="container">
+				<div class="tt-newsletter col-sm-7">
+					<h2 class="text-uppercase">Subscribe to our Newsletter</h2>
 				</div>
-				<p class="mb-4">Donec facilisis quam ut purus rutrum lobortis.
-					Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet
-					velit. Aliquam vulputate velit imperdiet dolor tempor tristique.
-					Pellentesque habitant</p>
-
-				<ul class="list-unstyled custom-social">
-					<li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
-					<li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
-					<li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
-					<li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
-				</ul>
-			</div>
-
-			<div class="col-lg-8">
-				<div class="row links-wrap">
-					<div class="col-6 col-sm-6 col-md-3">
-						<ul class="list-unstyled">
-							<li><a href="#">About us</a></li>
-							<li><a href="#">Services</a></li>
-							<li><a href="#">Blog</a></li>
-							<li><a href="#">Contact us</a></li>
-						</ul>
-					</div>
-
-					<div class="col-6 col-sm-6 col-md-3">
-						<ul class="list-unstyled">
-							<li><a href="#">Support</a></li>
-							<li><a href="#">Knowledge base</a></li>
-							<li><a href="#">Live chat</a></li>
-						</ul>
-					</div>
-
-					<div class="col-6 col-sm-6 col-md-3">
-						<ul class="list-unstyled">
-							<li><a href="#">Jobs</a></li>
-							<li><a href="#">Our team</a></li>
-							<li><a href="#">Leadership</a></li>
-							<li><a href="#">Privacy Policy</a></li>
-						</ul>
-					</div>
-
-					<div class="col-6 col-sm-6 col-md-3">
-						<ul class="list-unstyled">
-							<li><a href="#">Nordic Chair</a></li>
-							<li><a href="#">Kruzo Aero</a></li>
-							<li><a href="#">Ergonomic Chair</a></li>
-						</ul>
-					</div>
+				<div class="block-content col-sm-5">
+					<form method="post" action="contact-us.html">
+						<div class="input-group">
+							<input type="email" name="email" value=""
+								placeholder="Email address.." required="" class="form-control">
+							<span class="input-group-btn">
+								<button class="btn btn-theme text-uppercase btn-primary"
+									type="submit">Subscribe</button>
+							</span>
+						</div>
+					</form>
 				</div>
 			</div>
-
 		</div>
-
-		<div class="border-top copyright">
-			<div class="row pt-4">
-				<div class="col-lg-6">
-					<p class="mb-2 text-center text-lg-start">
-						Copyright &copy;
-						<script>
-							document.write(new Date().getFullYear());
-						</script>
-						. All Rights Reserved. &mdash; Designed with love by <a
-							href="https://untree.co">Untree.co</a> Distributed By <a
-							hreff="https://themewagon.com">ThemeWagon</a>
-						<!-- License information: https://untree.co/license/ -->
-					</p>
+	</div>
+	<footer class="page-footer font-small footer-default">
+		<div class="container text-center text-md-left">
+			<div class="row">
+				<div class="col-md-2 footer-cms footer-column">
+					<div class="ttcmsfooter">
+						<div class="footer-logo">
+							<img src="img/logos/footer-logo.png" alt="footer-logo"
+								width="200" height="50">
+						</div>
+						<div class="footer-desc">At vero eos et accusamus et iusto
+							odio dignissimos ducimus, duis faucibus enim vitae</div>
+					</div>
 				</div>
-
-				<div class="col-lg-6 text-center text-lg-end">
-					<ul class="list-unstyled d-inline-flex ms-auto">
-						<li class="me-4"><a href="#">Terms &amp; Conditions</a></li>
-						<li><a href="#">Privacy Policy</a></li>
+				<div class="col-md-2 footer-column">
+					<div class="title">
+						<a href="#company"
+							class="font-weight-normal text-capitalize mb-10"
+							data-toggle="collapse" aria-expanded="false">company</a>
+					</div>
+					<ul id="company" class="list-unstyled collapse">
+						<li><a href="#">search</a></li>
+						<li><a href="#">New Products</a></li>
+						<li><a href="category.html">Best Collection</a></li>
+						<li><a href="wishlist.html">wishlist</a></li>
 					</ul>
 				</div>
+				<div class="col-md-2 footer-column">
+					<div class="title">
+						<a href="#products"
+							class="font-weight-normal text-capitalize mb-10"
+							data-toggle="collapse" aria-expanded="false">products</a>
+					</div>
+					<ul id="products" class="list-unstyled collapse">
+						<li><a href="blog-details.html">blog</a></li>
+						<li><a href="about-us.html">about us</a></li>
+						<li><a href="contact-us.html">contact us</a></li>
+						<li><a href="my-account.html">my account</a></li>
+					</ul>
 
+				</div>
+				<div class="col-md-2 footer-column">
+					<div class="title">
+						<a href="#account"
+							class="font-weight-normal text-capitalize mb-10"
+							data-toggle="collapse" aria-expanded="false">your account</a>
+					</div>
+					<ul id="account" class="list-unstyled collapse">
+						<li><a href="blog-details.html">personal info</a></li>
+						<li><a href="#">orders</a></li>
+						<li><a href="contact-us.html">addresses</a></li>
+						<li><a href="my-account.html">my wishlists</a></li>
+					</ul>
+
+				</div>
+				<div class="col-md-2 footer-column">
+					<div class="title">
+						<a href="#information"
+							class="font-weight-normal text-capitalize mb-10"
+							data-toggle="collapse" aria-expanded="false">store
+							information</a>
+					</div>
+					<ul id="information" class="list-unstyled collapse">
+						<li class="contact-detail links"><span class="address">
+								<span class="icon"><i class="material-icons">location_on</i></span>
+								<span class="data"> 4030, Central Bazzar, opp. Varachha
+									Police Station, Varachha Main Road, Surat, Gujarat 395006,
+									India</span>
+						</span></li>
+						<li class="links"><span class="contact"> <span
+								class="icon"><i class="material-icons">phone</i></span> <span
+								class="data"><a href="tel:(99)55669999">+ (99)
+										55-669-999</a></span>
+						</span></li>
+						<li class="links"><span class="email"> <span
+								class="icon"><i class="material-icons">email</i></span> <span
+								class="data"><a href="mailto:demo.store@gmail.com">demo.store@gmail.com</a></span>
+						</span></li>
+					</ul>
+				</div>
 			</div>
 		</div>
+		<!-- Copyright -->
+		<div class="footer-bottom-wrap">
+			<div class="container">
+				<div class="row">
+					<div class="footer-copyright text-center py-3">© 2019 -
+						Boostrap theme by store™</div>
+				</div>
+			</div>
+		</div>
+		<a href="#" id="goToTop" title="Back to top" class="btn-primary"><i
+			class="material-icons arrow-up">keyboard_arrow_up</i></a>
 
-	</div>
-</footer>
+
+	</footer>
