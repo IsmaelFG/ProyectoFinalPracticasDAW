@@ -64,7 +64,7 @@ public class EditarPerfilServlet extends HttpServlet {
 		
 		
 		sessionLogin.setAttribute("usuario", UsuarioService.recuperarUsuario(email));
-    	request.getRequestDispatcher("perfil.jsp").forward(request, response);
+    	request.getRequestDispatcher("editarPerfil.jsp").forward(request, response);
 		
 	}
 

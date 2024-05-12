@@ -27,7 +27,7 @@ public class PagarFilter implements Filter {
         HashMap<Integer, Integer> carrito = (HashMap<Integer, Integer>) session.getAttribute("carrito");
         
         if (carrito.size() == 0) {
-        	request.getRequestDispatcher("carritoVacio.jsp").forward(request, response);
+        	request.getRequestDispatcher("cart.jsp").forward(request, response);
         }
         // Verificar si hay un usuario en la sesión
         if (httpRequest.getSession().getAttribute("usuario") == null) {
@@ -36,9 +36,5 @@ public class PagarFilter implements Filter {
         } else {
         	request.getRequestDispatcher("datosEnvio.jsp").forward(request, response);
         }
-    }
- 
-    public void destroy() {
-        // Cleanup code, if any
     }
 }

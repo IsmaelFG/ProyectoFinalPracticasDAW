@@ -18,38 +18,48 @@
 <div class="untree_co-section" style="padding: 3rem 0;">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6 mb-5 mb-md-0">
-				<div class="form-group row">
-					<form action="CambiarClaveServlet" method="post" class="row">
-						<div class="col-md-6">
-							<label for="c_fname" class="text-black">Nueva Contraseña <span
-								class="text-danger">*</span></label> <input type="password"
-								class="form-control" id="nuevaClave" name="nuevaClave" required>
+			<div class="col-md-8">
+				<form action="CambiarClaveServlet" method="post" class="row">
+					<div class="col-md-8">
+						<div class="form-group">
+							<label for="nuevaClave" class="text-black">Nueva
+								Contraseña <span class="text-danger">*</span>
+							</label> <input type="password" class="form-control" id="nuevaClave"
+								name="nuevaClave" required>
 						</div>
-						<div class="col-md-6">
-							<label for="c_lname" class="text-black">Contraseña <span
+					</div>
+					<div class="col-md-8">
+						<div class="form-group">
+							<label for="clave" class="text-black">Contraseña <span
 								class="text-danger">*</span></label> <input type="password"
 								class="form-control" id="clave" name="clave" required>
 						</div>
-						<div class="col-md-6">
-							<label for="c_lname" class="text-black">Repetir Contraseña <span
-								class="text-danger">*</span></label> <input type="password"
-								class="form-control" id="claveRepetida" name="claveRepetida" required>
+					</div>
+					<div class="col-md-8">
+						<div class="form-group">
+							<label for="claveRepetida" class="text-black">Repetir
+								Contraseña <span class="text-danger">*</span>
+							</label> <input type="password" class="form-control" id="claveRepetida"
+								name="claveRepetida" required>
 						</div>
+					</div>
+					<div class="col-md-6">
 						<div class="form-group pt-4">
 							<input type="submit" class="btn btn-black btn-lg py-2 btn-block"
 								value="Cambiar Contraseña"></input>
 						</div>
-					</form>
-				</div>
-
-
+					</div>
+					<div class="col-md-6">
+						<div class="form-group pt-4">
+							<a href="EditarPerfilServlet"
+								style="background: #f0f0f0; color: black;"
+								class="btn btn-black btn-lg py-2 btn-block">Volver</a>
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
-
 	</div>
-	<!-- </form> -->
 </div>
-
 <%@ include file="footer.jsp"%>
 </html>

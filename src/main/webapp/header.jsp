@@ -44,23 +44,6 @@
 				<div class="header-main">
 					<div class="container">
 						<div
-							class="header-left float-left d-flex d-lg-flex d-md-block d-xs-block">
-							<div class="language-wrapper toggle">
-								<button type="button"
-									class="btn text-capitalize dropdown-toggle">
-									<img src="img/banner/es.png" alt="en" height="12" width="18" /><span>Español</span>
-								</button>
-								<div id="language-dropdown" class="language">
-									<ul>
-										<li><a href="/TIENDA_ISMAEL_FERRERAS/"><img
-												src="img/banner/es.png" alt="es" width="18" height="12" /><span>Español</span></a></li>
-										<li><a href="/TIENDA_ISMAEL_FERRERAS/"><img
-												src="img/banner/en.png" alt="en" width="18" height="12" /><span>English</span></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div
 							class="header-middle float-lg-left float-md-left float-sm-left float-xs-none">
 							<div class="logo">
 								<a href="/TIENDA_ISMAEL_FERRERAS/"><img
@@ -79,9 +62,9 @@
 										if (session.getAttribute("usuario") != null) {
 											UsuarioVO u = (UsuarioVO) session.getAttribute("usuario");
 										%>
-										<li><a href="PerfilServlet" class="text-capitalize">Cuenta</a></li>
-										<li><a href="LogoutServlet" class="text-capitalize">Cerrar
-												Sesión</a></li>
+										<li><a href="EditarPerfilServlet" class="text-capitalize">Cuenta</a></li>
+										<li><a href="ListadoPedidosServlet" class="text-capitalize">Pedidos</a></li>
+										<li><a href="LogoutServlet" class="text-capitalize">Cerrar Sesión</a></li>
 										<%
 										} else {
 										%>
@@ -152,3 +135,18 @@
 			</div>
 		</div>
 	</header>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/custom.js"></script>
+	<script src="js/parallax.js"></script>
+	<script src="js/lightbox-2.6.min.js"></script>
+	<script src="js/ResizeSensor.min.js"></script>
+	<script src="js/theia-sticky-sidebar.min.js"></script>
+	<script src="js/inview.js"></script>
+	<script src="js/cookiealert.js"></script>
+	<script src="js/jquery.countdown.min.js"></script>
+	<script src="js/masonry.pkgd.min.js"></script>
+	<script src="js/imagesloaded.pkgd.min.js"></script>
+	<script src="js/jquery.zoom.min.js"></script>
+	<script src="js/jquery.lazy.min.js"></script>

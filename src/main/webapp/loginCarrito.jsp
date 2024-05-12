@@ -17,36 +17,46 @@
 	<div class="container">
 		<div class="col-md-12 pb-4">
 			<div class="border p-4 rounded" role="alert">
-				No estas registrado? <a href="RegistroServlet">Click aqui</a> para registrarte
+				No estás registrado? <a href="RegistroServlet">Haz clic aquí</a>
+				para registrarte
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-6 mb-5 mb-md-0">
-				<div class="form-group row">
-					<form action="LoginServletCarrito" method="post" class="row">
-						<div class="col-md-6">
+				<form action="LoginCarritoServlet" method="post" class="row">
+					<div class="col-md-12">
+						<div class="form-group">
 							<label for="c_fname" class="text-black">Email <span
 								class="text-danger">*</span></label> <input type="email"
 								class="form-control" id="c_fname" name="email">
 						</div>
-						<div class="col-md-6">
+					</div>
+					<div class="col-md-12">
+						<div class="form-group">
 							<label for="c_lname" class="text-black">Password <span
 								class="text-danger">*</span></label> <input type="password"
 								class="form-control" id="c_lname" name="clave">
 						</div>
+					</div>
+					<div class="col-md-12"><p style="color: red; margin-top: 10px; margin-left: 5px; font-size: 15px;"><%=request.getAttribute("error") != null ? request.getAttribute("error") : ""%></p></div>
+					<div class="col-md-6">
 						<div class="form-group pt-4">
 							<input type="submit" class="btn btn-black btn-lg py-2 btn-block"
 								value="Iniciar Sesion"></input>
 						</div>
-					</form>
-				</div>
-
-
+					</div>
+					<div class="col-md-6">
+						<div class="form-group pt-4">
+							<a href="/TIENDA_ISMAEL_FERRERAS"
+								style="background: #f0f0f0; color: black;"
+								class="btn btn-black btn-lg py-2 btn-block">Volver</a>
+						</div>
+					</div>
+				</form>
 			</div>
-		</div>
 
+		</div>
 	</div>
-	<!-- </form> -->
 </div>
 
 <%@ include file="footer.jsp"%>

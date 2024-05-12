@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 
 import org.mindrot.jbcrypt.BCrypt;
 
@@ -13,7 +14,7 @@ import curso.java.tienda.util.Conexion;
 public class UsuarioDAO {
 
 	public static boolean verificarCredenciales(String email, String clave) {
-		String sql = "SELECT email, clave FROM usuarios WHERE email = ?";
+		String sql = "SELECT email, clave, fecha_baja FROM usuarios WHERE email = ?";
 		Connection c = Conexion.getConexion();
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
@@ -24,20 +25,21 @@ public class UsuarioDAO {
 			rs = stmt.executeQuery();
 
 			if (rs.next()) {
-				// Si hay resultados en la consulta
 				String emailRecibido = rs.getString("email");
 				String claveRecibida = rs.getString("clave");
-
-				// Ejemplo de comparación para verificar credenciales
+				Date fechaBaja = rs.getDate("fecha_baja");
+				if(fechaBaja!=null) {
+					return false;
+				}
 				if (emailRecibido.equals(email) && BCrypt.checkpw(clave, claveRecibida)) {
-					return true; // Credenciales válidas
+					return true;
 				}
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 
-		return false; // Credenciales inválidas o error en la consulta
+		return false;
 	}
 
 	public static void agregarUsuario(int rol,String email, String clave) throws SQLException {
@@ -55,7 +57,7 @@ public class UsuarioDAO {
 
 			stmt.executeUpdate();
 		} catch (SQLException e) {
-			e.printStackTrace(); // Manejo de errores, puedes personalizarlo según tus necesidades
+			e.printStackTrace();
 		}
 
 	}
@@ -77,7 +79,6 @@ public class UsuarioDAO {
 			stmt.setString(5, telefono);
 			stmt.setString(6, email);
 
-			// Ejecutar la consulta
 			stmt.executeUpdate();
 
 		} catch (SQLException e) {
@@ -132,8 +133,6 @@ public class UsuarioDAO {
 			rs = ps.executeQuery();
 
 			if (rs.next()) {
-				// Si se encuentra el usuario, crear un objeto UsuarioVO con los datos
-				// recuperados de la base de datos
 				usuario = new UsuarioVO();
 				usuario.setId(rs.getInt("id"));
 				usuario.setRolId(rs.getInt("id_rol"));
@@ -149,7 +148,7 @@ public class UsuarioDAO {
 				usuario.setDni(rs.getString("dni"));
 			}
 		} catch (SQLException e) {
-			e.printStackTrace(); // Manejo de errores, puedes personalizarlo según tus necesidades
+			e.printStackTrace();		
 		}
 		return usuario;
 	}

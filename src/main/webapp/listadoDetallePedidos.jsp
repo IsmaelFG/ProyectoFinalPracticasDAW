@@ -30,6 +30,7 @@
 								<th class="product-priceUnidad">PrecioUnidad</th>
 								<th class="product-unidades">Unidades</th>
 								<th class="product-total">Total</th>
+								<th class="product-remove">Eliminar</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -38,20 +39,27 @@
 
 							List<DetallePedidoVO> listaDetallePedidos = (List<DetallePedidoVO>) request.getAttribute("detallesPedido");
 
-							for (DetallePedidoVO detallesPedido : listaDetallePedidos) {
+							for (DetallePedidoVO detallePedido : listaDetallePedidos) {
 							%>
 
 							<tr>
-								<td><%=detallesPedido.getId()%></td>
-								<td><%=detallesPedido.getIdProducto()%></td>
-								<td><%=detallesPedido.getPrecioUnidad()%></td>
-								<td><%=detallesPedido.getUnidades()%></td>
-								<td><%=detallesPedido.getTotal()%></td>
-								<td>
+								<td><%=detallePedido.getId()%></td>
+								<td><%=detallePedido.getIdProducto()%></td>
+								<td><%=detallePedido.getPrecioUnidad()%></td>
+								<td><%=detallePedido.getUnidades()%></td>
+								<td><%=detallePedido.getTotal()%></td>
+								<td><%=listaDetallePedidos.size() > 1 && request.getParameter("estadoPedido").equals("PE") ? "<a href='BorrarDetallePedidoListadoServlet?id=" + detallePedido.getId() + "' class='btn btn-black btn-sm'>X</a>": ""%>
+
+								</td>
+								<tr>
+
+								<%
+								}
+								%>
+							
+							
+							
 						</tbody>
-						<%
-						}
-						%>
 					</table>
 				</div>
 			</form>
@@ -60,9 +68,10 @@
 		<div class="row">
 			<div class="col-md-6">
 				<div class="row mb-5">
-					<div class="col-md-6">
-						<a class="btn btn-outline-black btn-sm btn-block"
-							href="ListadoPedidosServlet">Volver</a>
+					<div class="col-md-4">
+						<a href="ListadoPedidosServlet"
+							style="background: #f0f0f0; color: black;"
+							class="btn btn-black btn-lg py-2 btn-block">Volver</a>
 					</div>
 				</div>
 			</div>

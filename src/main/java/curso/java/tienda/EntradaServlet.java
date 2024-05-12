@@ -43,12 +43,10 @@ public class EntradaServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 
-		// Si todo ha ido bien creo el carrito
 		if (request.getSession().getAttribute("carrito") == null) {
 			request.getSession().setAttribute("carrito", new HashMap<Integer, Integer>());
 		}
 
-		// Obtener el valor del filtro enviado desde el formulario
 		String filtro = request.getParameter("filtros");
 
 		if (filtro == null) {
@@ -73,18 +71,14 @@ public class EntradaServlet extends HttpServlet {
 			break;
 
 		}
-		// Obtiene la URL base de la página actual
 		StringBuffer url = request.getRequestURL();
 
-		// Obtiene la cadena de consulta (query string) si existe
 		String queryString = request.getQueryString();
 
-		// Si hay una cadena de consulta, la añade a la URL
 		if (queryString != null) {
 			url.append("?").append(queryString);
 		}
 
-		// Convierte la URL en una cadena de texto
 		String currentUrl = url.toString();
 
 		request.getSession().setAttribute("currentUrl", currentUrl);

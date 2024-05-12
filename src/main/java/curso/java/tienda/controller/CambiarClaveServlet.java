@@ -46,7 +46,7 @@ public class CambiarClaveServlet extends HttpServlet {
 		String claveRepetida = request.getParameter("claveRepetida");
 		
 		if(UsuarioService.validarClaves(clave, claveRepetida)) {
-			request.getRequestDispatcher("cambiarClave.jsp").forward(request, response);
+			request.getRequestDispatcher("editarPerfil.jsp").forward(request, response);
 		} 
 		
 		 HttpSession session = request.getSession(true);

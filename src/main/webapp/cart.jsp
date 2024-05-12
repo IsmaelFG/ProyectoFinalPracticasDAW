@@ -73,7 +73,7 @@ function actualizarPagina() {
 		<div class="row justify-content-between">
 			<div class="col-lg-5">
 				<div class="intro-excerpt">
-					<h1>Cart</h1>
+					<h1>Carrito</h1>
 				</div>
 			</div>
 			<div class="col-lg-7"></div>
@@ -92,12 +92,12 @@ function actualizarPagina() {
 					<table class="table">
 						<thead>
 							<tr>
-								<th class="product-thumbnail">Image</th>
-								<th class="product-name">Product</th>
-								<th class="product-price">Price</th>
-								<th class="product-quantity">Quantity</th>
+								<th class="product-thumbnail">Imagen</th>
+								<th class="product-name">Producto</th>
+								<th class="product-price">Precio</th>
+								<th class="product-quantity">Cantidad</th>
 								<th class="product-total">Total</th>
-								<th class="product-remove">Remove</th>
+								<th class="product-remove">Eliminar</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -110,7 +110,7 @@ function actualizarPagina() {
 							%>
 							<tr>
 								<td class="product-thumbnail"><img
-									src="images/product-1.png" alt="Image" class="img-fluid">
+									src="img/products/<%=producto.getImagen()%>" alt="Image" class="img-fluid" style="width:60px;">
 								</td>
 								<td class="product-name">
 									<h2 class="h5 text-black"><%=producto.getNombre()%></h2>
@@ -156,7 +156,7 @@ function actualizarPagina() {
 				<div class="row mb-5">
 					<div class="col-md-6">
 						<a class="btn btn-outline-black btn-sm btn-block"
-							href="/TIENDA_ALVARO_CORDERO/">Continuar Comprando</a>
+							href="/TIENDA_ISMAEL_FERRERAS/">Continuar Comprando</a>
 					</div>
 				</div>
 			</div>
@@ -180,10 +180,6 @@ function actualizarPagina() {
 	</div>
 </div>
 <%@ include file="footer.jsp"%>
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/tiny-slider.js"></script>
-<script src="js/custom.js"></script>
-
 </body>
 
 </html>

@@ -1,5 +1,7 @@
 package curso.java.tienda.model;
 
+import java.util.Date;
+
 import lombok.Data;
 
 @Data
@@ -17,6 +19,7 @@ public class UsuarioVO {
 	private String provincia;
 	private String telefono;
 	private String dni;
+	private Date fecha_baja;
 	
 	public UsuarioVO() {
 		super();
@@ -32,7 +35,7 @@ public class UsuarioVO {
 
 
 	public UsuarioVO(int id, int rolId, String email, String clave, String nombre, String apellido1, String apellido2,
-			String direccion, String localidad, String provincia, String telefono, String dni) {
+			String direccion, String localidad, String provincia, String telefono, String dni, Date fecha_baja) {
 		this.id = id;
 		this.rolId = rolId;
 		this.email = email;
@@ -45,6 +48,7 @@ public class UsuarioVO {
 		this.provincia = provincia;
 		this.telefono = telefono;
 		this.dni = dni;
+		this.fecha_baja = fecha_baja;
 	}
 
 }

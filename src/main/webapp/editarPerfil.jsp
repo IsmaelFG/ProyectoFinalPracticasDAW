@@ -18,7 +18,7 @@
 <div class="untree_co-section" style="padding: 3rem 0;">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6 mb-5 mb-md-0">
+			<div class="col-md-8 mb-5 mb-md-0">
 				<div class="form-group row">
 					<form action="EditarPerfilServlet" method="post" class="row">
 						<%
@@ -74,17 +74,22 @@
 								class="form-control" id="telefono" name="telefono"
 								value="<%=(usuario != null && usuario.getTelefono() != null) ? usuario.getTelefono() : ""%>">
 						</div>
-						<div class="form-group pt-4">
+						<div class="form-group col-md-5" style="padding:20px">
 							<input type="submit" class="btn btn-black btn-lg py-2 btn-block"
 								value="Editar"></input>
 						</div>
+						<div class="form-group col-md-5" style="padding:20px">
+							<a href="CambiarClaveServlet" 
+								style="background: #f0f0f0; color: black;"
+								class="btn btn-black btn-lg py-2 btn-block">Cambiar clave</a>
+						</div>
+						<div class="form-group col-md-4" style="padding:20px">
+							<a href="/TIENDA_ISMAEL_FERRERAS"
+								style="background: #f0f0f0; color: black;"
+								class="btn btn-black btn-lg py-2 btn-block">Volver</a>
+						</div>
 					</form>
 				</div>
-
-				<a href="PerfilServlet">Volver</a> <a
-					href="CambiarClaveServlet">Cambiar Contraseña</a>
-
-
 			</div>
 		</div>
 

@@ -38,6 +38,46 @@ public class DetallePedidoDAO {
 		}
 	}
 	
+	public static boolean buscarDetallePedido(int id) {
+		try {
+			Connection con = Conexion.getConexion();
+			PreparedStatement st = con.prepareStatement("SELECT * FROM detalles_pedido WHERE id = ?");
+			st.setInt(1, id);
+
+			
+				ResultSet rs = st.executeQuery();
+				if(rs.next()) {
+					return true;
+				}
+				
+					
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		return false;
+		
+		
+
+			
+
+	}
+	
+	public static void cancelarDetallePedido(int id) {
+		Connection con = Conexion.getConexion();
+		try {
+			String sql = "DELETE FROM detalles_pedido WHERE id = ?";
+			PreparedStatement stmt = con.prepareStatement(sql);
+
+			stmt.setInt(1, id);
+
+			stmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public static List<DetallePedidoVO> buscarDetallePedidoId(int id) {
 		List<DetallePedidoVO> listaDetallesPedido = new ArrayList<DetallePedidoVO>();
 		DetallePedidoVO detallePedido = null;
@@ -49,7 +89,7 @@ public class DetallePedidoDAO {
 
 			ResultSet rs = st.executeQuery();
 
-			if (rs.next()) {
+			while (rs.next()) {
 				
 				int idDetalle = rs.getInt("id");
 				int idProducto = rs.getInt("id_producto");

@@ -1,6 +1,6 @@
+<%@ include file="header.jsp"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="header.jsp"%>
 	<main>
 		<div class="slider-wrapper my-40 my-sm-25 float-left w-100">
 			<div class="container">
@@ -84,6 +84,7 @@
 					</div>
 				</div>
 			</div>
+			</div>
 			<div id="main">
 				<div id="hometab"
 					class="home-tab my-40 my-sm-25 bottom-to-top hb-animate-element">
@@ -107,9 +108,9 @@
 												<div class="product-thumb">
 													<div class="image zoom">
 														<a href="DetalleProductoServlet?id=<%=producto.getId()%>">
-															<img src="img/products/<%=producto.getId()%>.png" height="501"
+															<img src="img/products/<%=producto.getImagen()%>" height="501"
 															width="385" /> <img
-															src="img/products/<%=producto.getId()%>.png"
+															src="img/products/<%=producto.getImagen()%>"
 															class="second_image img-responsive" height="501"
 															width="385" />
 														</a>
@@ -140,7 +141,7 @@
 														<div class="button-wrapper">
 															<div class="button-group text-center">
 																<button type="button" class="btn btn-primary btn-cart"
-																	onclick="window.location.href='AñadirProductoServlet?id=<%=producto.getId()%>&product-quantity=1'">
+																	onclick="window.location.href='AñadirProductoServlet?id=<%=producto.getId()%>&product-quantity=1'" <%=producto.getStock()<1 ? "disabled='disabled'":"" %>>
 																	<i class="material-icons">shopping_cart</i><span>Add
 																		to cart</span>
 																</button>
@@ -419,33 +420,6 @@
 					</div>
 				</div>
 	</main>
-	<!-- Footer -->
 	<%@ include file="footer.jsp"%>
-	<div class="alert text-center cookiealert" role="alert">
-		<b>Do you like cookies?</b> We use cookies to ensure you get the best
-		experience on our website. <a
-			href="https://demo.templatetrip.com/Html/HTML001_victoria/"
-			rel="noreferrer">learn more</a>
-
-		<button type="button" class="btn btn-primary btn-sm acceptcookies"
-			aria-label="Close">I agree</button>
-	</div>
-
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/custom.js"></script>
-	<script src="js/parallax.js"></script>
-	<script src="js/lightbox-2.6.min.js"></script>
-	<script src="js/ResizeSensor.min.js"></script>
-	<script src="js/theia-sticky-sidebar.min.js"></script>
-	<script src="js/inview.js"></script>
-	<script src="js/cookiealert.js"></script>
-	<script src="js/jquery.countdown.min.js"></script>
-	<script src="js/masonry.pkgd.min.js"></script>
-	<script src="js/imagesloaded.pkgd.min.js"></script>
-	<script src="js/jquery.zoom.min.js"></script>
-	<script src="js/jquery.lazy.min.js"></script>
-
 </body>
 </html>

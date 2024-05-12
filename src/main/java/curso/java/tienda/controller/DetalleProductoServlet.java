@@ -43,7 +43,7 @@ public class DetalleProductoServlet extends HttpServlet {
 			
 			request.setAttribute("producto", producto);
 			
-			request.getRequestDispatcher("shop-single.jsp").forward(request, response);
+			request.getRequestDispatcher("DetalleProducto.jsp").forward(request, response);
 
 		}
 
