@@ -386,16 +386,27 @@
 								<td th:text="${product.fecha_baja}"></td>
 								<td th:text="${product.imagen}"></td>
 								<td>
-									<a th:href="@{/productsAdmin/fechaBaja/{id}(id=${product.id})}">
-										<i class=" fas fa-arrow-down" style="color: red;"></i>
-									</a>
-
+									<div>
+										<a th:if="${product.fecha_baja == null}"
+											th:href="@{/productsAdmin/fechaBaja/{id}(id=${product.id})}">
+											<i class="fas fa-arrow-down" style="color: red;"></i>
+										</a>
+									</div>
+									<div>
+										<a th:if="${product.fecha_baja != null}"
+											th:href="@{/productsAdmin/eliminarFechaBaja/{id}(id=${product.id})}">
+											<i class="fas fa-arrow-up" style="color: green;"></i>
+										</a>
+									</div>
 								</td>
 								<td>
 									<a class="btn btn-success"
 										th:href="@{/productsAdmin/edit/{id}(id=${product.id})}">Editar</a>
 								</td>
-
+								<td>
+									<a class="btn btn-danger"
+										th:href="@{/productsAdmin/delete/{id}(id=${product.id})}">Eliminar</a>
+								</td>
 							</tr>
 						</tbody>
 					</table>

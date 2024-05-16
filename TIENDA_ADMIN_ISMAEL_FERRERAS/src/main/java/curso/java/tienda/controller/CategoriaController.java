@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import curso.java.tienda.model.CategoriaVO;
+import curso.java.tienda.model.UsuarioVO;
 import curso.java.tienda.repository.CategoriaRepository;
 
 @Controller
@@ -37,6 +38,16 @@ public class CategoriaController {
 		} else {
 			return "redirect:/categories/form";
 		}
+
+	}
+	@GetMapping("/categoriesAdmin/delete/{id}")
+	public String deleteCategory(@PathVariable Integer id) {
+		if (categoriaRepository.existsById(id)) {
+			CategoriaVO category = categoriaRepository.findById(id).get();
+			
+			categoriaRepository.delete(category);
+		}
+		return "redirect:/categoriesAdmin";
 
 	}
 

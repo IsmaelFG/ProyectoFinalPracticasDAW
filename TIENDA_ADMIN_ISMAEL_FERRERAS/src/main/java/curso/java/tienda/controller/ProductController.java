@@ -1,6 +1,7 @@
 package curso.java.tienda.controller;
 
 import java.util.Date;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -45,7 +46,6 @@ public class ProductController {
 	@PostMapping("/products")
 	public String createProduct(@ModelAttribute ProductoVO producto) {
 	    if (producto.getId() != 0) {
-	        // Actualización
 	        productRepository.findById(producto.getId()).ifPresent(p -> {
 	            p.setNombre(producto.getNombre());
 	            p.setDescripcion(producto.getDescripcion());
@@ -64,6 +64,4 @@ public class ProductController {
 	    }
 	    return "redirect:/products";
 	}
-
-	
 }

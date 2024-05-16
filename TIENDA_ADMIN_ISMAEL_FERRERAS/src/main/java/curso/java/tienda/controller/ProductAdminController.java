@@ -42,11 +42,20 @@ public class ProductAdminController {
 		}
 
 	}
+	@GetMapping("/productsAdmin/delete/{id}")
+	public String deleteProduct(@PathVariable Integer id) {
+		if (productRepository.existsById(id)) {
+			ProductoVO product= productRepository.findById(id).get();
+			
+			productRepository.delete(product);
+		}
+		return "redirect:/productsAdmin";
+
+	}
 	
 	@PostMapping("/productsAdmin")
 	public String createProduct(@ModelAttribute ProductoVO producto) {
 	    if (producto.getId() != 0) {
-	        // Actualización
 	        productRepository.findById(producto.getId()).ifPresent(p -> {
 	            p.setNombre(producto.getNombre());
 	            p.setDescripcion(producto.getDescripcion());
@@ -72,8 +81,20 @@ public class ProductAdminController {
         
         if (optionalProduct.isPresent()) {
             ProductoVO product = optionalProduct.get();
-            // Actualizar la fecha de baja a la fecha actual
             product.setFecha_baja(new Date());
+            productRepository.save(product);
+        } 
+        
+        return "redirect:/productsAdmin";
+    }
+	
+	@GetMapping("/productsAdmin/eliminarFechaBaja/{id}")
+    public String updateProductAlta(@PathVariable Integer id) {
+        Optional<ProductoVO> optionalProduct = productRepository.findById(id);
+        
+        if (optionalProduct.isPresent()) {
+            ProductoVO product = optionalProduct.get();
+            product.setFecha_baja(null);
             productRepository.save(product);
         } 
         

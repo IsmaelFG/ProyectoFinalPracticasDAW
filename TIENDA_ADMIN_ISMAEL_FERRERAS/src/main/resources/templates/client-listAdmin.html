@@ -388,14 +388,26 @@
 								<td th:text="${client.dni}"></td>
 								<td th:text="${client.fecha_baja}"></td>
 								<td>
-									<a th:href="@{/clientsAdmin/fechaBaja/{id}(id=${client.id})}">
-										<i class=" fas fa-arrow-down" style="color: red;"></i>
-									</a>
-
+									<div>
+										<a th:if="${client.fecha_baja== null}"
+											th:href="@{/clientsAdmin/fechaBaja/{id}(id=${client.id})}">
+											<i class="fas fa-arrow-down" style="color: red;"></i>
+										</a>
+									</div>
+									<div>
+										<a th:if="${client.fecha_baja != null}"
+											th:href="@{/clientsAdmin/eliminarFechaBaja/{id}(id=${client.id})}">
+											<i class="fas fa-arrow-up" style="color: green;"></i>
+										</a>
+									</div>
 								</td>
 								<td>
 									<a class="btn btn-success"
 										th:href="@{/clientsAdmin/edit/{id}(id=${client.id})}">Editar</a>
+								</td>
+								<td>
+									<a class="btn btn-danger"
+										th:href="@{/clientsAdmin/delete/{id}(id=${client.id})}">Eliminar</a>
 								</td>
 							</tr>
 						</tbody>

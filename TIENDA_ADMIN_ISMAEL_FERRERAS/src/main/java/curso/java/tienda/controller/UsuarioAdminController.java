@@ -70,14 +70,36 @@ public class UsuarioAdminController {
 	    return "redirect:/clientsAdmin";
 	}
 	
+	@GetMapping("/clientsAdmin/delete/{id}")
+	public String deleteProduct(@PathVariable Integer id) {
+		if (usuarioRepository.existsById(id)) {
+			UsuarioVO user = usuarioRepository.findById(id).get();
+			
+			usuarioRepository.delete(user);
+		}
+		return "redirect:/clientsAdmin";
+
+	}
+	
 	@GetMapping("/clientsAdmin/fechaBaja/{id}")
     public String updateProductBaja(@PathVariable Integer id) {
         Optional<UsuarioVO> optionalProduct = usuarioRepository.findById(id);
         
         if (optionalProduct.isPresent()) {
             UsuarioVO usuario = optionalProduct.get();
-            // Actualizar la fecha de baja a la fecha actual
             usuario.setFecha_baja(new Date());
+            usuarioRepository.save(usuario);
+        } 
+        
+        return "redirect:/clientsAdmin";
+    }
+	@GetMapping("/clientsAdmin/eliminarFechaBaja/{id}")
+    public String updateProductAlta(@PathVariable Integer id) {
+        Optional<UsuarioVO> optionalProduct = usuarioRepository.findById(id);
+        
+        if (optionalProduct.isPresent()) {
+            UsuarioVO usuario = optionalProduct.get();
+            usuario.setFecha_baja(null);
             usuarioRepository.save(usuario);
         } 
         
